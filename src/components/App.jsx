@@ -3,10 +3,16 @@ import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter  from './Filter/Filter';
 import { getIsContacts } from '../redux/contactsSlice/contactsSelectors';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchContact } from 'utils/mockapiApi';
 
 export function App() {
+  const dispatch = useDispatch();
   const contatsList = useSelector(getIsContacts);
+  useEffect(() => {
+    dispatch(fetchContact())
+  },[dispatch])
   return (
     <div className={s.container}>
       <h1 className={s.title}>Phonebook</h1>

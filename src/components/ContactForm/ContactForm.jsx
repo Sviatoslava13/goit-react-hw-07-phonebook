@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import s from './ContactForm.module.css';
-import { addContact } from '../../redux/contactsSlice/contactsSlice';
+import { addContact } from '../../utils/mockapiApi.js'
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from '../../redux/contactsSlice/contactsSelectors';
 function ContactForm() {
@@ -16,7 +16,7 @@ function ContactForm() {
       contact => contact.name.trim().toLowerCase() === name.trim().toLowerCase()
     )
       ? alert(`${name} is already in contacts `)
-      : dispatch(addContact({ name, number }));
+      : dispatch(addContact({ name,number }));
     reset();
   };
 

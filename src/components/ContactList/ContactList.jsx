@@ -1,6 +1,6 @@
 import s from './ContactList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeContact } from '../../redux/contactsSlice/contactsSlice';
+import { removeContact } from '../../utils/mockapiApi';
 import {
   getContacts,
   getContactsFilter,
@@ -11,6 +11,7 @@ const ContactList = () => {
 
   const filter = useSelector(getContactsFilter);
   const contacts = useSelector(getContacts);
+  
 
   const filterContact = () => {
     const filterName = filter?.toLowerCase();
