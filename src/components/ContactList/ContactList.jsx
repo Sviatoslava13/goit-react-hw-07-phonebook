@@ -11,7 +11,6 @@ const ContactList = () => {
 
   const filter = useSelector(getContactsFilter);
   const contacts = useSelector(getContacts);
-  
 
   const filterContact = () => {
     const filterName = filter?.toLowerCase();
